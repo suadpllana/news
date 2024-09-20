@@ -5,14 +5,16 @@ import {useState , useEffect} from "react"
 
 const News = ({category}) => {
 
-    const API_KEY = `697bdddcf91843d2885cbf1af3aa2ac5`
+    const API_KEY = `PbWBsRwk88xVWUetWCv65O63HtoHHmKg9LsmS94I`
     const [articles , setArticles] = useState([])
 
   async function getNews(){
-    const url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${API_KEY}`
+       const url = `https://newsdata.io/api/1/latest?apikey=pub_53939b7dfe34e0dd94ddf6b3aabecd46a6eb6&q=${category }`
       const response =  await fetch(url)
       const data =  await response.json()
-      setArticles(data.articles)
+      console.log(data)
+      setArticles(data.results)
+      console.log(articles)
   }
 
     useEffect(() => {
@@ -29,18 +31,18 @@ const News = ({category}) => {
         <h1 className="text-center">Latest <span className="badge bg-danger">News</span></h1>
         <div className="newsContainer">
        
-            {articles ? 
-           articles.map((article, index) => (
+           
+          { articles.map((article, index) => (
             <NewsItem 
               key={index} 
               title={article.title} 
               description={article.description} 
-              image={article.urlToImage} 
-              url={article.url}
+              image={article.image_url} 
+              url={article.link}
             />
             
-          ))  
-           : <></>}
+          ))  }
+         
            
       
         </div>
