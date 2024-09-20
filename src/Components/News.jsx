@@ -5,16 +5,23 @@ import {useState , useEffect} from "react"
 
 const News = ({category}) => {
 
-    const API_KEY = `PbWBsRwk88xVWUetWCv65O63HtoHHmKg9LsmS94I`
+    const API_KEY = `pub_53939b7dfe34e0dd94ddf6b3aabecd46a6eb6`
     const [articles , setArticles] = useState([])
 
   async function getNews(){
-       const url = `https://newsdata.io/api/1/latest?apikey=pub_53939b7dfe34e0dd94ddf6b3aabecd46a6eb6&q=${category }`
+       const url = `https://newsdata.io/api/1/latest?apikey=${API_KEY}&q=${category }`
       const response =  await fetch(url)
-      const data =  await response.json()
-      console.log(data)
-      setArticles(data.results)
-      console.log(articles)
+      const data = await response.json()
+      if(data.status !== "error"){
+        console.log(data)
+        setArticles(data.results)
+      }
+      else{
+        alert("API limi exceeded , please try again after 15 minutes!")
+        return
+      }
+     
+    
   }
 
     useEffect(() => {
