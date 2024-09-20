@@ -9,7 +9,7 @@ const News = ({category}) => {
     const [articles , setArticles] = useState([])
 
   async function getNews(){
-       const url = `https://newsdata.io/api/1/latest?apikey=${API_KEY}&q=${category }`
+       const url = `https://newsdata.io/api/1/latest?apikey=${API_KEY}&q=${category}&language=en`
       const response =  await fetch(url)
       const data = await response.json()
       if(data.status !== "error"){
@@ -17,7 +17,7 @@ const News = ({category}) => {
         setArticles(data.results)
       }
       else{
-        alert("API limi exceeded , please try again after 15 minutes!")
+        alert("API limit exceeded , please try again after 15 minutes!")
         return
       }
      
