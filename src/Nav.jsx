@@ -15,7 +15,7 @@ const Nav = ({setCategory}) => {
         <a className="nav-link" onClick={() => setCategory("business")}>Business</a>
         <a className="nav-link" onClick={() => setCategory("health")}>Health</a>
         <a className="nav-link " onClick={() => setCategory("sports")}>Sports</a>
-        <a className="nav-link "onClick={() => setCategory("entertainment")}>Entertainment</a>
+        <a className="nav-link " onClick={() => setCategory("entertainment")}>Entertainment</a>
       </div>
     </div>
   </div>
