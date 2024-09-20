@@ -29,17 +29,18 @@ const News = ({category}) => {
         <h1 className="text-center">Latest <span className="badge bg-danger">News</span></h1>
         <div className="newsContainer">
        
+            {articles ? 
+           articles.map((article, index) => (
+            <NewsItem 
+              key={index} 
+              title={article.title} 
+              description={article.description} 
+              image={article.urlToImage} 
+              url={article.url}
+            />
             
-            {articles.map((article, index) => (
-              <NewsItem 
-                key={index} 
-                title={article.title} 
-                description={article.description} 
-                image={article.urlToImage} 
-                url={article.url}
-              />
-              
-            ))}
+          ))  
+           : <></>}
            
       
         </div>
