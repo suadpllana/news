@@ -22,9 +22,9 @@ const News = ({category}) => {
       <div className="container">
         <h1 className="text-center">Latest <span className="badge bg-danger">News</span></h1>
         <div className="newsContainer">
-          {articles  ? (
+       
             
-            articles.map((article, index) => (
+            {articles.map((article, index) => (
               <NewsItem 
                 key={index} 
                 title={article.title} 
@@ -33,11 +33,9 @@ const News = ({category}) => {
                 url={article.url}
               />
               
-            ))
+            ))}
            
-          ) : (
-            <p>Loading...</p> // Display loading or error message
-          )}
+      
         </div>
       </div>
     );
