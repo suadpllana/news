@@ -2,14 +2,26 @@
 
 .container{
    text-align: center;
-   
-}
 
+}
+.card{
+   position: relative;
+}
+.btn-primary{
+   position: absolute;
+
+   bottom: 2px;
+   left: 36%;
+}
 
 .newsContainer{
    display: grid;
    grid-template-columns: 1fr 1fr 1fr 
   
+}
+button{
+   position: absolute;
+   bottom: 0;
 }
 @media (max-width: 767px){
    .newsContainer {

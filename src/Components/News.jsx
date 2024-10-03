@@ -5,7 +5,7 @@ import {useState , useEffect} from "react"
 
 const News = ({category}) => {
 
-    const API_KEY = `pub_53939b7dfe34e0dd94ddf6b3aabecd46a6eb6`
+    const API_KEY = import.meta.env.VITE_API_KEY
     const [articles , setArticles] = useState([])
 
   async function getNews(){
