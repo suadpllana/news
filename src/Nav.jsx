@@ -11,11 +11,18 @@ const Nav = ({setCategory}) => {
     </button>
     <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div className="navbar-nav">
+      <a className="nav-link " onClick={() => setCategory("top")}>Top</a>
         <a className="nav-link" onClick={() => setCategory("technology")} >Technology</a>
+        <a className="nav-link " onClick={() => setCategory("crime")}>Crime</a>
+        <a className="nav-link " onClick={() => setCategory("sports")}>Sports</a>
+        <a className="nav-link " onClick={() => setCategory("politics")}>Politics</a>
+        <a className="nav-link " onClick={() => setCategory("science")}>Science</a>
         <a className="nav-link" onClick={() => setCategory("business")}>Business</a>
         <a className="nav-link" onClick={() => setCategory("health")}>Health</a>
-        <a className="nav-link " onClick={() => setCategory("sports")}>Sports</a>
+        <a className="nav-link " onClick={() => setCategory("education")}>Education</a>
         <a className="nav-link " onClick={() => setCategory("entertainment")}>Entertainment</a>
+        <a className="nav-link " onClick={() => setCategory("world")}>All around the world</a>
+   
       </div>
     </div>
   </div>
