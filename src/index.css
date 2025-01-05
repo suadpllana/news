@@ -18,8 +18,13 @@ body{
     cursor: pointer;
 }
 @media (max-width: 767px) {
+    .navbar-nav {
+        background-color: black;
+        z-index: 100000;
+       
+    }
     .nav-link{
-        color: black;
+        color: wheat;
         z-index: 1;
     }
 }
